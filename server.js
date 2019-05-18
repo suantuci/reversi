@@ -79,7 +79,7 @@ io.sockets.on('connection',function(socket) {
       return;
     }
 
-    var lroom = payload.room;
+    var room = payload.room;
     if(('undefined' === typeof room) || !room){
       var error_message = 'join_room did not specify a room, command aborted';
       log(error_message);
@@ -103,8 +103,7 @@ io.sockets.on('connection',function(socket) {
 
     socket.join(room);
 
-
-    var roomObject = io.sockets.adapter.rooms[rooms];
+    var roomObject = io.sockets.adapter.rooms[room];
     if(('undefined' === typeof roomObject) || !roomObject){
       var error_message = 'join_room could not create a room (internal error), command aborted';
       log(error_message);
@@ -138,7 +137,6 @@ io.sockets.on('connection',function(socket) {
       'message'  : the message
       }
       or
-      send_message_response,
       'result' : 'fail',
       'message' : failure_message,
       }
@@ -156,7 +154,7 @@ socket.on('send_message',function(payload){
       return;
     }
 
-    var lroom = payload.room;
+    var room = payload.room;
     if(('undefined' === typeof room) || !room){
       var error_message = 'send_message did not specify a room, command aborted';
       log(error_message);
@@ -191,13 +189,13 @@ socket.on('send_message',function(payload){
 
     var success_data = {
                           result: 'success',
-                          room: 'room',
-                          username: 'username',
-                          message: 'message'
+                          room: room,
+                          username: username,
+                          message: message
                         };
     io.sockets.in(room).emit('send_message_response',success_data);
     log('Message sent to room ' + room + ' by ' + username);
-  });
+    });
 
 });
 

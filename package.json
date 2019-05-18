@@ -21,6 +21,7 @@
   "homepage": "https://github.com/suantuci/reversi#readme",
   "dependencies": {
     "node-static": "^0.7.11",
+    "save": "^2.3.3",
     "socket.io": "^2.2.0"
   }
 }
