@@ -39,7 +39,7 @@ function send_message() {
   var payload = {};
   payload.room = chat_room;
   payload.username = username;
-  payload.message = $('#send_message_holder')val();
+  payload.message = $('#send_message_holder').val();
   console.log('*** Client Log Message: \'sen\' payload: '+JSON.stringify(payload));
   socket.emit('send_message',payload);
 }
