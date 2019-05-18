@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class='row'>
-          <div class='col'>
+          <div class='col text-left'>
             <h3>Messages</h3>
             <div id='messages'>
             </div>
@@ -35,7 +35,7 @@
               <form onsubmit='send_message(); return false;'>
               <div class='form-group'>
                 <label for='form-group' class='col-form-label sr-only'>Enter your chat message</label>
-                <input class='form-control' type='text' value='' id='send_message_holder' placeholder='Enter your chat message'/>
+                <input class='form-control' type='text' value='' id='send_message_holder' placeholder='Enter your chat message' autocomplete='off'/>
               </div>
               <button type='submit' class= 'btn btn-default btn-primary'>Send</button>
               </form>
