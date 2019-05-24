@@ -103,7 +103,7 @@ socket.on('player_disconnected', function(payload){
 /* if someone left, then animate out all their content */
 var dom_elements = $('.socket_'+payload.socket_id);
 
-/* if something exists */
+/* if something exits */
 if (dom_elements.length != 0) {
   dom_elements.slideUp(1000);
 }
@@ -114,9 +114,6 @@ var newNode = $(newHTML);
 newNode.hide();
 $('#messages').append(newNode);
 newNode.slideDown(1000);
-
-
-  $('#messages').append('<p>New user joined the room: '+payload.username+'</p>');
 });
 
 socket.on('send_message_response', function(payload){
