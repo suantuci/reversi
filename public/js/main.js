@@ -31,7 +31,8 @@ socket.on('log', function(array){
 
 /* what to do when the server responds that someone joined a room*/
 socket.on('join_room_response', function(payload){
-  console.log(payload);
+  console.log('poop');
+  console.log(payload.result)
   if(payload.result == 'fail') {
     alert(payload.message);
     return;
