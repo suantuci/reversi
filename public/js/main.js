@@ -32,7 +32,6 @@ socket.on('log', function(array){
 /* what to do when the server responds that someone joined a room*/
 socket.on('join_room_response', function(payload){
   console.log('poop');
-  console.log(payload.result)
   if(payload.result == 'fail') {
     alert(payload.message);
     return;
@@ -99,7 +98,7 @@ socket.on('player_disconnected', function(payload){
   }
 
 /* if we are being notified that we joined the room, then ignore it*/
-  if(payload.socket_id == socket_id) {
+  if(payload.socket_id == socket.id) {
     return;
   }
 
