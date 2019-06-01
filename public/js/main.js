@@ -113,12 +113,12 @@ if (dom_elements.length != 0) {
   dom_elements.slideUp(1000);
 }
 
-/* Manage the message that a  player has left */
+/* Manage the message that a player has left */
 var newHTML = '<p>'+payload.username+' has left the lobby</p>';
 var newNode = $(newHTML);
 newNode.hide();
 $('#messages').append(newNode);
-newNode.slideDown(1000);
+newNode.slideDown(1000) ;
 });
 
 /* send an invite message to the server */
