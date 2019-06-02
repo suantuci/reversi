@@ -7,13 +7,13 @@
     <title>Reversi Game Lobby</title>
     <style>
         #header-row {
-          background: #fdedf1;
+          ba ckground: #fdedf1;
         }
     </style>
 
     <!-- Bootstrap CSS -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
   </head>
   <body>
@@ -23,33 +23,31 @@
             <h2>Lobby</h2>
           </div>
         </div>
-        <div class='row align-items-end' id='players'>
-          <div class='col-9 text-left'>
+      </div>
+      <div class='row align-items-end' id='players'>
+        <div class='col-9 text-left'>
           <h3>Players</h3>
         </div>
         <div class='col-3'>
         </div>
-        
+     </div>
         <!-- This is where the new people in the lobby are going to go-->
-      
-      </div>
-        </div>
         <div class='row'>
           <div class='col text-left'>
-            <h3>Messages</h3>
-            <div id='messages'>
-            </div>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='col'>
-              <form onsubmit='send_message(); return false;'>
-              <div class='form-group'>
-                <label for='form-group' class='col-form-label sr-only'>Enter your chat message</label>
-                <input class='form-control' type='text' value='' id='send_message_holder' placeholder='Enter your chat message' autocomplete='off'/>
-              </div>
+              <h3>Messages</h3>
+              <form class='form-inline' onsubmit='send_message(); return false;'>
+              <label for='send_message_holder' class='col-form-label sr-only'>Enter your chat message</label>
+                <input class='form-control mx-auto w-75' type='text' value='' id='send_message_holder' placeholder='Enter your chat message' autocomplete='off'/>
               <button type='submit' class= 'btn btn-default btn-primary'>Send</button>
               </form>
+          </div>
+        </div>     
+
+        <div class='row'>
+          <div class='col text-left'>
+
+            <div id='messages'>
+            </div>
           </div>
         </div>
     </div>
